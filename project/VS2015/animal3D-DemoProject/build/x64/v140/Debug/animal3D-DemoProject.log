@@ -1,5 +1,8 @@
 ﻿  a3_demo_callbacks.c
   a3_DemoState.c
-..\..\..\source\animal3D-DemoProject\A3_DEMO\a3_DemoState.c(904): error C2220: warning treated as error - no 'object' file generated
-..\..\..\source\animal3D-DemoProject\A3_DEMO\a3_DemoState.c(904): warning C4013: 'FMOD_Channel_GetSpectrum' undefined; assuming extern returning int
   Generating Code...
+  animal3D-DemoProject.vcxproj -> C:\Users\Vedant Chaudhari\Desktop\Graphics-Final\lib\x64\v140\Debug\animal3D-DemoProject.dll
+  A subdirectory or file .\bin\x64\v140\Debug\animal3D-demos\ already exists.
+  A subdirectory or file .\bin\x64\v140\Debug\data\ already exists.
+  .\lib\x64\v140\Debug\animal3D-DemoProject.dll
+  1 File(s) copied

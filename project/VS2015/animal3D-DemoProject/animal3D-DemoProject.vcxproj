@@ -78,6 +78,7 @@
     <LinkIncremental>true</LinkIncremental>
     <OutDir>$(ANIMAL3D_SDK)lib\$(PlatformTarget)\$(PlatformToolset)\$(Configuration)\</OutDir>
     <IntDir>$(ProjectDir)build\$(PlatformTarget)\$(PlatformToolset)\$(Configuration)\</IntDir>
+    <IncludePath>$(SolutionDir)include;$(VC_IncludePath);$(WindowsSDK_IncludePath);</IncludePath>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
     <LinkIncremental>false</LinkIncremental>

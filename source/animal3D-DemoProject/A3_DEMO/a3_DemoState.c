@@ -900,7 +900,11 @@ void a3demo_update(a3_DemoState *demoState, double dt)
 	for (i = 0; i < demoStateMaxCount_camera; ++i)
 		a3demo_updateCameraViewProjection(demoState->camera + i);
 
-	// update audio data
+	// update audio data - Vedant
+	// FMOD_Channel_GetSpectrum(demoState->channel, demoState->spectrum_data, 256, 0, FMOD_DSP_FFT_WINDOW_TRIANGLE);
+	// FMOD_DSP_GetParameterData(FMOD_DSP_FFT_SPECTRUMDATA, 1, (void **)&demoState->fft, 1024, demoState->spectrum_data, 256)
+	// Get Wave and Spectrum Data
+	FMOD_Channel_GetWaveData(demoState->channel, demoState->wave_data, 256, 0);
 	FMOD_Channel_GetSpectrum(demoState->channel, demoState->spectrum_data, 256, 0, FMOD_DSP_FFT_WINDOW_TRIANGLE);
 }
 
