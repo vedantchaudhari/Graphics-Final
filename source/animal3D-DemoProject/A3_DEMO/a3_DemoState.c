@@ -680,6 +680,11 @@ void a3demo_initScene(a3_DemoState *demoState)
 	// initialize other objects 
 	// e.g. light
 	a3real4Set(demoState->lightPos_world.v, 20.0f, 0.0f, 0.0f, 1.0f);
+
+	// Initialize FMOD audio - Vedant
+	FMOD_System_Create(&demoState->audio_system);
+	demoState->channel = 0;
+	FMOD_System_Init(demoState->audio_system, 32, FMOD_INIT_NORMAL, 0);
 }
 
 
@@ -718,6 +723,9 @@ void a3demo_refresh(a3_DemoState *demoState)
 // confirm that all graphics objects were unloaded
 void a3demo_validateUnload(const a3_DemoState *demoState)
 {
+	// Unload FMOD - Vedant
+	FMOD_System_Close(demoState->audio_system);
+
 	unsigned int handle;
 	const a3_Framebuffer *currentFBO = demoState->framebuffer,
 		*const endFBO = currentFBO + demoStateMaxCount_framebuffer;

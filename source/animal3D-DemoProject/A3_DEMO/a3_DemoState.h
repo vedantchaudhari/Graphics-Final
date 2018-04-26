@@ -37,13 +37,14 @@
 
 #include "animal3D/animal3D.h"
 
-
 //-----------------------------------------------------------------------------
 // other demo includes
 
 #include "_utilities/a3_DemoSceneObject.h"
 #include "_utilities/a3_DemoShaderProgram.h"
 
+#include "fmod/fmod.h"
+#include "fmod/fmod_errors.h"
 
 //-----------------------------------------------------------------------------
 
@@ -132,6 +133,11 @@ extern "C"
 		// (initialized in 'init scene')
 		a3vec4 lightPos_world;
 
+		// Include Audio Stuff - Vedant
+		FMOD_SYSTEM* audio_system;
+		FMOD_SOUND* sound;
+		FMOD_CHANNEL* channel;
+		FMOD_RESULT* result;
 
 		//---------------------------------------------------------------------
 		// object arrays: organized as anonymous unions for two reasons: 
