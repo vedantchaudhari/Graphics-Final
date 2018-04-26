@@ -44,6 +44,9 @@
 #include "_utilities/a3_DemoShaderProgram.h"
 
 #include "fmod/fmod.h"
+#include "fmod/fmod_dsp.h"
+#include "fmod\fmod_common.h"
+#include "fmod\fmod_dsp_effects.h"
 #include "fmod/fmod_errors.h"
 
 //-----------------------------------------------------------------------------
@@ -138,6 +141,9 @@ extern "C"
 		FMOD_SOUND* sound;
 		FMOD_CHANNEL* channel;
 		FMOD_RESULT* result;
+
+		float spectrum_data[256];
+		float wave_data[512];
 
 		//---------------------------------------------------------------------
 		// object arrays: organized as anonymous unions for two reasons: 

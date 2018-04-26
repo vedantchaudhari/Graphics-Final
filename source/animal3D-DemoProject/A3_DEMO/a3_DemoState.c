@@ -899,6 +899,9 @@ void a3demo_update(a3_DemoState *demoState, double dt)
 	// update cameras
 	for (i = 0; i < demoStateMaxCount_camera; ++i)
 		a3demo_updateCameraViewProjection(demoState->camera + i);
+
+	// update audio data
+	FMOD_Channel_GetSpectrum(demoState->channel, demoState->spectrum_data, 256, 0, FMOD_DSP_FFT_WINDOW_TRIANGLE);
 }
 
 void a3demo_render(const a3_DemoState *demoState)
