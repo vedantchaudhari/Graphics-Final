@@ -681,10 +681,8 @@ void a3demo_initScene(a3_DemoState *demoState)
 	// e.g. light
 	a3real4Set(demoState->lightPos_world.v, 20.0f, 0.0f, 0.0f, 1.0f);
 
-	// Initialize FMOD audio - Vedant
-	FMOD_System_Create(&demoState->audio_system);
-	demoState->channel = 0;
-	FMOD_System_Init(demoState->audio_system, 32, FMOD_INIT_NORMAL, 0);
+	// init fmod
+//	fmod_init(demoState);
 }
 
 
@@ -723,9 +721,8 @@ void a3demo_refresh(a3_DemoState *demoState)
 // confirm that all graphics objects were unloaded
 void a3demo_validateUnload(const a3_DemoState *demoState)
 {
-	// Unload FMOD - Vedant
-	FMOD_System_Close(demoState->audio_system);
-
+	// unload fmod data
+//	fmod_unload(demoState);
 	unsigned int handle;
 	const a3_Framebuffer *currentFBO = demoState->framebuffer,
 		*const endFBO = currentFBO + demoStateMaxCount_framebuffer;
@@ -900,12 +897,8 @@ void a3demo_update(a3_DemoState *demoState, double dt)
 	for (i = 0; i < demoStateMaxCount_camera; ++i)
 		a3demo_updateCameraViewProjection(demoState->camera + i);
 
-	// update audio data - Vedant
-	// FMOD_Channel_GetSpectrum(demoState->channel, demoState->spectrum_data, 256, 0, FMOD_DSP_FFT_WINDOW_TRIANGLE);
-	// FMOD_DSP_GetParameterData(FMOD_DSP_FFT_SPECTRUMDATA, 1, (void **)&demoState->fft, 1024, demoState->spectrum_data, 256)
-	// Get Wave and Spectrum Data
-	FMOD_Channel_GetWaveData(demoState->channel, demoState->wave_data, 256, 0);
-	FMOD_Channel_GetSpectrum(demoState->channel, demoState->spectrum_data, 256, 0, FMOD_DSP_FFT_WINDOW_TRIANGLE);
+	// update audio data
+//  fmod_updateAudioData(demoState);
 }
 
 void a3demo_render(const a3_DemoState *demoState)
@@ -1261,6 +1254,36 @@ void a3demo_render(const a3_DemoState *demoState)
 
 		glEnable(GL_DEPTH_TEST);
 	}
+}
+
+// FMOD functions -----------------------------------------------------
+void fmod_init(a3_DemoState *demoState/*params*/)
+{
+	// Initialize FMOD audio - Vedant
+	FMOD_System_Create(&demoState->audio_system);
+	demoState->channel = 0;
+	FMOD_System_Init(demoState->audio_system, 32, FMOD_INIT_NORMAL, 0);
+}
+
+void fmod_loadAudio(a3_DemoState *demoState/*params*/)
+{
+
+}
+
+void fmod_unload(a3_DemoState *demoState/*params*/)
+{
+	// Unload FMOD - Vedant
+	FMOD_System_Close(demoState->audio_system);
+}
+
+void fmod_updateAudioData(a3_DemoState *demoState/*params*/)
+{
+	// update audio data - Vedant
+	// FMOD_Channel_GetSpectrum(demoState->channel, demoState->spectrum_data, 256, 0, FMOD_DSP_FFT_WINDOW_TRIANGLE);
+	// FMOD_DSP_GetParameterData(FMOD_DSP_FFT_SPECTRUMDATA, 1, (void **)&demoState->fft, 1024, demoState->spectrum_data, 256)
+	// Get Wave and Spectrum Data
+	FMOD_Channel_GetWaveData(demoState->channel, demoState->wave_data, 256, 0);
+	FMOD_Channel_GetSpectrum(demoState->channel, demoState->spectrum_data, 256, 0, FMOD_DSP_FFT_WINDOW_TRIANGLE);
 }
 
 

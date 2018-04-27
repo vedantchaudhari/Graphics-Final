@@ -278,6 +278,12 @@ extern "C"
 	// other utilities
 	void a3demo_setDefaultGraphicsState();
 
+	// fmod functions
+	void fmod_init(a3_DemoState *demoState/*params*/);
+	void fmod_loadAudio(a3_DemoState *demoState/*params*/);
+	void fmod_updateAudioData(a3_DemoState *demoState/*params*/);
+	void fmod_unload(a3_DemoState *demoState/*params*/);
+
 	// loading and unloading
 	void a3demo_loadFramebuffers(a3_DemoState *demoState);
 	void a3demo_loadTextures(a3_DemoState *demoState);
