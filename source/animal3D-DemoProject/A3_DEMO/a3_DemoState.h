@@ -251,6 +251,8 @@ struct a3_DemoState
 		a3_DemoStateShaderProgram shaderProgram[demoStateMaxCount_shaderProgram];
 		struct {
 			a3_DemoStateShaderProgram
+				prog_drawMusicVisualizer[1],		// music visualizer shaders
+
 				prog_drawEffectsMRT[1],				// draw effects shaders
 				prog_drawCombinedMRT[1],			// draw combined shaders
 

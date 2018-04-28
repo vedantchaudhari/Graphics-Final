@@ -361,6 +361,9 @@ void a3demo_loadShaders(a3_DemoState *demoState)
 	union {
 		struct {
 			// vertex shaders
+			// Music Visualizer - Vedant
+			a3_Shader passMusicVisualizer_transform_vs[1];
+
 			// 03 HW
 			a3_Shader passEffects_transform_vs[1];
 			a3_Shader passCombined_transform_vs[1];
@@ -376,6 +379,9 @@ void a3demo_loadShaders(a3_DemoState *demoState)
 			a3_Shader passColor_transform_vs[1];
 
 			// fragment shaders
+			// Music Visualizer - Vedant
+			a3_Shader drawMusicVisualizer_fs[1];
+
 			// 03 HW
 			a3_Shader drawEffects_mrt_fs[1];
 			a3_Shader drawCombined_mrt_fs[1];
@@ -407,6 +413,9 @@ void a3demo_loadShaders(a3_DemoState *demoState)
 
 		// CHANGE THE /e/S
 		// vs
+		// music-visualizer - Vedant
+		{ a3shader_vertex,		1,{ "../../../../resource/glsl/4x/vs/music-visualizer/music_visualizer_vs4x.glsl" } },
+
 		// 03
 		{ a3shader_vertex,		1,{ "../../../../resource/glsl/4x/vs/03-framebuffer/passEffects_transform_vs4x.glsl" } },
 		{ a3shader_vertex,		1,{ "../../../../resource/glsl/4x/vs/03-framebuffer/passCombined_transform_vs4x.glsl" } },
@@ -421,6 +430,9 @@ void a3demo_loadShaders(a3_DemoState *demoState)
 		{ a3shader_vertex,		1,{ "../../../../resource/glsl/4x/vs/e/passColor_transform_vs4x.glsl" } },
 
 		// fs
+		// music-visualizer
+		{ a3shader_vertex,		1,{ "../../../../resource/glsl/4x/fs/music-visualizer/music_visualizer_fs4x.glsl" } },
+
 		// 03
 		{ a3shader_fragment,	1,{ "../../../../resource/glsl/4x/fs/03-framebuffer/drawEffects_mrt_fs4x.glsl" } },
 		{ a3shader_fragment,	1,{ "../../../../resource/glsl/4x/fs/03-framebuffer/drawCombined_mrt_fs4x.glsl" } },
@@ -449,6 +461,11 @@ void a3demo_loadShaders(a3_DemoState *demoState)
 	// setup programs: 
 	//	- create program object
 	//	- attach shader objects
+	// music-visualizer program
+	currentDemoProg = demoState->prog_drawMusicVisualizer;
+	a3shaderProgramCreate(currentDemoProg->program);
+	a3shaderProgramAttachShader(currentDemoProg->program, shaderList.passMusicVisualizer_transform_vs);
+	a3shaderProgramAttachShader(currentDemoProg->program, shaderList.drawMusicVisualizer_fs);
 
 	// 03 programs
 	// Effects HSL, HSV, etc.
@@ -1029,11 +1046,7 @@ void a3demo_render(const a3_DemoState *demoState)
 
 	// ****TO-DO
 	// Add some sort of if statement here to switch between the two shader programs
-
-	if (demoState->programType == 0)
-		currentDemoProgram = demoState->prog_drawCombinedMRT;
-	else
-		currentDemoProgram = demoState->prog_drawEffectsMRT;
+	currentDemoProgram = demoState->prog_drawMusicVisualizer;
 
 	// currentDemoProgram = demoState->prog_drawAttribsMRT;
 	a3shaderProgramActivate(currentDemoProgram->program);
@@ -1282,8 +1295,8 @@ void fmod_updateAudioData(a3_DemoState *demoState/*params*/)
 	// FMOD_Channel_GetSpectrum(demoState->channel, demoState->spectrum_data, 256, 0, FMOD_DSP_FFT_WINDOW_TRIANGLE);
 	// FMOD_DSP_GetParameterData(FMOD_DSP_FFT_SPECTRUMDATA, 1, (void **)&demoState->fft, 1024, demoState->spectrum_data, 256)
 	// Get Wave and Spectrum Data
-//	FMOD_Channel_GetWaveData(demoState->channel, demoState->wave_data, 256, 0);
-//	FMOD_Channel_GetSpectrum(demoState->channel, demoState->spectrum_data, 256, 0, FMOD_DSP_FFT_WINDOW_TRIANGLE);
+	FMOD_Channel_GetWaveData(demoState->channel, demoState->wave_data, 256, 0);
+	FMOD_Channel_GetSpectrum(demoState->channel, demoState->spectrum_data, 256, 0, FMOD_DSP_FFT_WINDOW_TRIANGLE);
 }
 
 

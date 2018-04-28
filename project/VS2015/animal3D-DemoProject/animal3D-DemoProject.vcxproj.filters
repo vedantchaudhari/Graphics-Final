@@ -61,6 +61,12 @@
     <Filter Include="Resource Files\A3_DEMO\glsl\4x\vs\03-framebuffer">
       <UniqueIdentifier>{d6ef8e47-6f92-43ea-b596-450694dd650c}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Resource Files\A3_DEMO\glsl\4x\fs\music-visualizer">
+      <UniqueIdentifier>{10fb9a3f-c6fe-41b2-a2aa-37ca8cdfe03a}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Resource Files\A3_DEMO\glsl\4x\vs\music-visualizer">
+      <UniqueIdentifier>{bf0ce328-5e81-448c-b712-acbf17eff0a7}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="_src_win\main_dll.c">
@@ -144,6 +150,12 @@
     </None>
     <None Include="..\..\..\resource\glsl\4x\vs\03-framebuffer\passEffects_transform_vs4x.glsl">
       <Filter>Resource Files\A3_DEMO\glsl\4x\vs\03-framebuffer</Filter>
+    </None>
+    <None Include="..\..\..\resource\glsl\4x\fs\music-visualizer\music_visualizer_fs4x.glsl">
+      <Filter>Resource Files\A3_DEMO\glsl\4x\fs\music-visualizer</Filter>
+    </None>
+    <None Include="..\..\..\resource\glsl\4x\vs\music-visualizer\music_visualizer_vs4x.glsl">
+      <Filter>Resource Files\A3_DEMO\glsl\4x\vs\music-visualizer</Filter>
     </None>
   </ItemGroup>
 </Project>

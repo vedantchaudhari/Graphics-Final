@@ -1,22 +1,7 @@
-﻿  a3_DemoState.c
-  LINK : C:\Users\Aaron\Desktop\Graphcis Final\Graphics-Final\lib\x64\v140\Debug\animal3D-DemoProject.dll not found or not built by the last incremental link; performing full link
-     Creating library C:\Users\Aaron\Desktop\Graphcis Final\Graphics-Final\lib\x64\v140\Debug\animal3D-DemoProject.lib and object C:\Users\Aaron\Desktop\Graphcis Final\Graphics-Final\lib\x64\v140\Debug\animal3D-DemoProject.exp
-animal3D.lib(a3_GeometryData.obj) : warning LNK4099: PDB 'animal3D.pdb' was not found with 'animal3D.lib(a3_GeometryData.obj)' or at 'C:\Users\Aaron\Desktop\Graphcis Final\Graphics-Final\lib\x64\v140\Debug\animal3D.pdb'; linking object as if no debug info
-animal3D.lib(a3_ProceduralGeometry.obj) : warning LNK4099: PDB 'animal3D.pdb' was not found with 'animal3D.lib(a3_ProceduralGeometry.obj)' or at 'C:\Users\Aaron\Desktop\Graphcis Final\Graphics-Final\lib\x64\v140\Debug\animal3D.pdb'; linking object as if no debug info
-animal3D.lib(a3_ModelLoader_WavefrontOBJ.obj) : warning LNK4099: PDB 'animal3D.pdb' was not found with 'animal3D.lib(a3_ModelLoader_WavefrontOBJ.obj)' or at 'C:\Users\Aaron\Desktop\Graphcis Final\Graphics-Final\lib\x64\v140\Debug\animal3D.pdb'; linking object as if no debug info
-animal3D.lib(a3_BufferObject.obj) : warning LNK4099: PDB 'animal3D.pdb' was not found with 'animal3D.lib(a3_BufferObject.obj)' or at 'C:\Users\Aaron\Desktop\Graphcis Final\Graphics-Final\lib\x64\v140\Debug\animal3D.pdb'; linking object as if no debug info
-animal3D.lib(a3_Framebuffer.obj) : warning LNK4099: PDB 'animal3D.pdb' was not found with 'animal3D.lib(a3_Framebuffer.obj)' or at 'C:\Users\Aaron\Desktop\Graphcis Final\Graphics-Final\lib\x64\v140\Debug\animal3D.pdb'; linking object as if no debug info
-animal3D.lib(a3_ShaderProgram.obj) : warning LNK4099: PDB 'animal3D.pdb' was not found with 'animal3D.lib(a3_ShaderProgram.obj)' or at 'C:\Users\Aaron\Desktop\Graphcis Final\Graphics-Final\lib\x64\v140\Debug\animal3D.pdb'; linking object as if no debug info
-animal3D.lib(a3_TextRenderer.obj) : warning LNK4099: PDB 'animal3D.pdb' was not found with 'animal3D.lib(a3_TextRenderer.obj)' or at 'C:\Users\Aaron\Desktop\Graphcis Final\Graphics-Final\lib\x64\v140\Debug\animal3D.pdb'; linking object as if no debug info
-animal3D.lib(a3_Texture.obj) : warning LNK4099: PDB 'animal3D.pdb' was not found with 'animal3D.lib(a3_Texture.obj)' or at 'C:\Users\Aaron\Desktop\Graphcis Final\Graphics-Final\lib\x64\v140\Debug\animal3D.pdb'; linking object as if no debug info
-animal3D.lib(a3_VertexDescriptors.obj) : warning LNK4099: PDB 'animal3D.pdb' was not found with 'animal3D.lib(a3_VertexDescriptors.obj)' or at 'C:\Users\Aaron\Desktop\Graphcis Final\Graphics-Final\lib\x64\v140\Debug\animal3D.pdb'; linking object as if no debug info
-animal3D.lib(a3_VertexBuffer.obj) : warning LNK4099: PDB 'animal3D.pdb' was not found with 'animal3D.lib(a3_VertexBuffer.obj)' or at 'C:\Users\Aaron\Desktop\Graphcis Final\Graphics-Final\lib\x64\v140\Debug\animal3D.pdb'; linking object as if no debug info
-animal3D.lib(a3_VertexDrawable.obj) : warning LNK4099: PDB 'animal3D.pdb' was not found with 'animal3D.lib(a3_VertexDrawable.obj)' or at 'C:\Users\Aaron\Desktop\Graphcis Final\Graphics-Final\lib\x64\v140\Debug\animal3D.pdb'; linking object as if no debug info
-animal3D.lib(a3_XboxControllerInput.obj) : warning LNK4099: PDB 'animal3D.pdb' was not found with 'animal3D.lib(a3_XboxControllerInput.obj)' or at 'C:\Users\Aaron\Desktop\Graphcis Final\Graphics-Final\lib\x64\v140\Debug\animal3D.pdb'; linking object as if no debug info
-animal3D.lib(a3_Stream.obj) : warning LNK4099: PDB 'animal3D.pdb' was not found with 'animal3D.lib(a3_Stream.obj)' or at 'C:\Users\Aaron\Desktop\Graphcis Final\Graphics-Final\lib\x64\v140\Debug\animal3D.pdb'; linking object as if no debug info
-animal3D.lib(a3_Timer.obj) : warning LNK4099: PDB 'animal3D.pdb' was not found with 'animal3D.lib(a3_Timer.obj)' or at 'C:\Users\Aaron\Desktop\Graphcis Final\Graphics-Final\lib\x64\v140\Debug\animal3D.pdb'; linking object as if no debug info
-animal3D-A3DM.lib(A3DM_c.obj) : warning LNK4099: PDB 'animal3D-A3DM.pdb' was not found with 'animal3D-A3DM.lib(A3DM_c.obj)' or at 'C:\Users\Aaron\Desktop\Graphcis Final\Graphics-Final\lib\x64\v140\Debug\animal3D-A3DM.pdb'; linking object as if no debug info
-  animal3D-DemoProject.vcxproj -> C:\Users\Aaron\Desktop\Graphcis Final\Graphics-Final\lib\x64\v140\Debug\animal3D-DemoProject.dll
+﻿  a3_demo_callbacks.c
+  a3_DemoState.c
+  Generating Code...
+  animal3D-DemoProject.vcxproj -> C:\Users\Vedant Chaudhari\Desktop\Graphics-Final\lib\x64\v140\Debug\animal3D-DemoProject.dll
   A subdirectory or file .\bin\x64\v140\Debug\animal3D-demos\ already exists.
   A subdirectory or file .\bin\x64\v140\Debug\data\ already exists.
   .\lib\x64\v140\Debug\animal3D-DemoProject.dll

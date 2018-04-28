@@ -117,7 +117,7 @@
       <WarningLevel>Level3</WarningLevel>
       <Optimization>Disabled</Optimization>
       <PreprocessorDefinitions>WIN$(PlatformArchitecture);_WINDOWS;WIN32_LEAN_AND_MEAN;_CRT_SECURE_NO_WARNINGS;_USRDLL;ANIMAL3DDEMOPROJECT_EXPORTS;_DEBUG;%(PreprocessorDefinitions)</PreprocessorDefinitions>
-      <AdditionalIncludeDirectories>$(ANIMAL3D_SDK)include\;$(ANIMAL3D_SDK)source\$(ProjectName)\;$(ANIMAL3D_SDK)thirdparty\include\;$(DEV_SDK_DIR)include\;$(ANIMAL3D_SDK)include\fmod\;C:\Program Files %28x86%29\FMOD SoundSystem\FMOD Programmers API Win64\api\inc;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>$(ANIMAL3D_SDK)include\;$(ANIMAL3D_SDK)source\$(ProjectName)\;$(ANIMAL3D_SDK)thirdparty\include\;$(DEV_SDK_DIR)include\;$(ANIMAL3D_SDK)include\fmod\;C:\Program Files %28x86%29\FMOD SoundSystem\FMOD Programmers API Win64\api\inc;%(AdditionalIncludeDirectories);</AdditionalIncludeDirectories>
       <DebugInformationFormat>ProgramDatabase</DebugInformationFormat>
       <TreatWarningAsError>true</TreatWarningAsError>
     </ClCompile>
@@ -201,6 +201,7 @@
     <None Include="..\..\..\resource\glsl\4x\fs\03-framebuffer\drawEffects_mrt_fs4x.glsl" />
     <None Include="..\..\..\resource\glsl\4x\fs\drawColorAttrib_fs4x.glsl" />
     <None Include="..\..\..\resource\glsl\4x\fs\drawColorUnif_fs4x.glsl" />
+    <None Include="..\..\..\resource\glsl\4x\fs\music-visualizer\music_visualizer_fs4x.glsl" />
     <None Include="..\..\..\resource\glsl\4x\vs\02-shading\passDiffuseComponents_transform_vs4x.glsl" />
     <None Include="..\..\..\resource\glsl\4x\vs\02-shading\passLambertComponents_transform_vs4x.glsl" />
     <None Include="..\..\..\resource\glsl\4x\vs\02-shading\passPhongComponents_transform_vs4x.glsl" />
@@ -208,6 +209,7 @@
     <None Include="..\..\..\resource\glsl\4x\vs\03-framebuffer\passAttribs_transform_vs4x.glsl" />
     <None Include="..\..\..\resource\glsl\4x\vs\03-framebuffer\passCombined_transform_vs4x.glsl" />
     <None Include="..\..\..\resource\glsl\4x\vs\03-framebuffer\passEffects_transform_vs4x.glsl" />
+    <None Include="..\..\..\resource\glsl\4x\vs\music-visualizer\music_visualizer_vs4x.glsl" />
     <None Include="..\..\..\resource\glsl\4x\vs\passColor_transform_vs4x.glsl" />
     <None Include="..\..\..\resource\glsl\4x\vs\passthru_transform_vs4x.glsl" />
   </ItemGroup>
