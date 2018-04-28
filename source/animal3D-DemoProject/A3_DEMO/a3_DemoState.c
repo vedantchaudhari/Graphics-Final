@@ -431,7 +431,7 @@ void a3demo_loadShaders(a3_DemoState *demoState)
 
 		// fs
 		// music-visualizer
-		{ a3shader_vertex,		1,{ "../../../../resource/glsl/4x/fs/music-visualizer/music_visualizer_fs4x.glsl" } },
+		{ a3shader_fragment,	1,{ "../../../../resource/glsl/4x/fs/music-visualizer/music_visualizer_fs4x.glsl" } },
 
 		// 03
 		{ a3shader_fragment,	1,{ "../../../../resource/glsl/4x/fs/03-framebuffer/drawEffects_mrt_fs4x.glsl" } },
@@ -687,7 +687,7 @@ void a3demo_initScene(a3_DemoState *demoState)
 
 	// demo modes
 	demoState->demoMode = 0;
-	demoState->demoModeCount = 4;
+	demoState->demoModeCount = 5;
 
 	demoState->displayDepth = 0;
 	demoState->displayGrid = 1;
@@ -1048,7 +1048,6 @@ void a3demo_render(const a3_DemoState *demoState)
 	// Add some sort of if statement here to switch between the two shader programs
 	currentDemoProgram = demoState->prog_drawMusicVisualizer;
 
-	// currentDemoProgram = demoState->prog_drawAttribsMRT;
 	a3shaderProgramActivate(currentDemoProgram->program);
 
 	// ground
@@ -1216,7 +1215,8 @@ void a3demo_render(const a3_DemoState *demoState)
 			"Attribute as shader 0: Texture or rgb2hsv",
 			"Attribute as shader 1: Diffuse or rgb2hsl",
 			"Attribute as shader 2: Lambert or black&white",
-			"Attribute as shader 3: Phong or heatmap",
+			"Attribute as shader 3: Phong or heatmap"
+			"TMP FUcK Music Visualizer straight up BOOLIN my guy"
 		};
 
 		const float col = (!demoState->displayDepth) ? 1.0f : 0.0f;

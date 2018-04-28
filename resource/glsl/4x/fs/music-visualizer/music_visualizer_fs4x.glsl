@@ -26,7 +26,7 @@ uniform float time;
 uniform float spectrum_data[256];
 uniform float wave_data[256];
 
-out vec4 rtFragColor;
+out vec4 rtMusicVisualizer;
 
 #define THICCNESS = 0.05;
 
@@ -37,5 +37,5 @@ void interpolate(in float index, out float value)
 
 void main()
 {
-	rtFragColor = vec4(1.0, 0.0, 0.0, 0.0);
+	rtMusicVisualizer = vec4(1.0, 0.0, 0.0, 1.0);
 }
