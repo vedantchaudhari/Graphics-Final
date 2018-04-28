@@ -898,7 +898,11 @@ void a3demo_update(a3_DemoState *demoState, double dt)
 		a3demo_updateCameraViewProjection(demoState->camera + i);
 
 	// update audio data
+<<<<<<< HEAD
 //  fmod_updateAudioData(demoState);
+=======
+	FMOD_Channel_GetSpectrum(demoState->channel, demoState->spectrum_data, 256, 0, FMOD_DSP_FFT_WINDOW_TRIANGLE);
+>>>>>>> parent of 949cb98... Can now get both spectrum and wave data
 }
 
 void a3demo_render(const a3_DemoState *demoState)

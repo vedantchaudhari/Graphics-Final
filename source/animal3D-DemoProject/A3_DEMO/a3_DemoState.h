@@ -43,8 +43,11 @@
 #include "_utilities/a3_DemoSceneObject.h"
 #include "_utilities/a3_DemoShaderProgram.h"
 
-#include "fmod\fmod.h"
-#include "fmod\fmod_errors.h"
+#include "fmod/fmod.h"
+#include "fmod/fmod_dsp.h"
+#include "fmod\fmod_common.h"
+#include "fmod\fmod_dsp_effects.h"
+#include "fmod/fmod_errors.h"
 
 //-----------------------------------------------------------------------------
 
