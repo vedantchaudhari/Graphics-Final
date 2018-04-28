@@ -405,34 +405,34 @@ void a3demo_loadShaders(a3_DemoState *demoState)
 		// DO NOT SUBMIT WORK USING ENCODED SHADERS OR YOU WILL GET ZERO!!!
 
 
-	// CHANGE THE /e/S
-	// vs
-	// 03
-	{ a3shader_vertex,		1,{ "../../../../resource/glsl/4x/vs/03-framebuffer/passEffects_transform_vs4x.glsl" } },
-	{ a3shader_vertex,		1,{ "../../../../resource/glsl/4x/vs/03-framebuffer/passCombined_transform_vs4x.glsl" } },
-	{ a3shader_vertex,		1,{ "../../../../resource/glsl/4x/vs/03-framebuffer/passAttribs_transform_vs4x.glsl" } },
+		// CHANGE THE /e/S
+		// vs
+		// 03
+		{ a3shader_vertex,		1,{ "../../../../resource/glsl/4x/vs/03-framebuffer/passEffects_transform_vs4x.glsl" } },
+		{ a3shader_vertex,		1,{ "../../../../resource/glsl/4x/vs/03-framebuffer/passCombined_transform_vs4x.glsl" } },
+		{ a3shader_vertex,		1,{ "../../../../resource/glsl/4x/vs/03-framebuffer/passAttribs_transform_vs4x.glsl" } },
 		// 02
-	{ a3shader_vertex,		1,{ "../../../../resource/glsl/4x/vs/02-shading/e/passPhongComponents_transform_vs4x.glsl" } },
-	{ a3shader_vertex,		1,{ "../../../../resource/glsl/4x/vs/02-shading/e/passLambertComponents_transform_vs4x.glsl" } },
-	{ a3shader_vertex,		1,{ "../../../../resource/glsl/4x/vs/02-shading/e/passDiffuseComponents_transform_vs4x.glsl" } },
-	{ a3shader_vertex,		1,{ "../../../../resource/glsl/4x/vs/02-shading/e/passTexcoord_transform_vs4x.glsl" } },
-	// base
-	{ a3shader_vertex,		1,{ "../../../../resource/glsl/4x/vs/e/passthru_transform_vs4x.glsl" } },
-	{ a3shader_vertex,		1,{ "../../../../resource/glsl/4x/vs/e/passColor_transform_vs4x.glsl" } },
+		{ a3shader_vertex,		1,{ "../../../../resource/glsl/4x/vs/02-shading/e/passPhongComponents_transform_vs4x.glsl" } },
+		{ a3shader_vertex,		1,{ "../../../../resource/glsl/4x/vs/02-shading/e/passLambertComponents_transform_vs4x.glsl" } },
+		{ a3shader_vertex,		1,{ "../../../../resource/glsl/4x/vs/02-shading/e/passDiffuseComponents_transform_vs4x.glsl" } },
+		{ a3shader_vertex,		1,{ "../../../../resource/glsl/4x/vs/02-shading/e/passTexcoord_transform_vs4x.glsl" } },
+		// base
+		{ a3shader_vertex,		1,{ "../../../../resource/glsl/4x/vs/e/passthru_transform_vs4x.glsl" } },
+		{ a3shader_vertex,		1,{ "../../../../resource/glsl/4x/vs/e/passColor_transform_vs4x.glsl" } },
 
-	// fs
-	// 03
-	{ a3shader_fragment,	1,{ "../../../../resource/glsl/4x/fs/03-framebuffer/drawEffects_mrt_fs4x.glsl" } },
-	{ a3shader_fragment,	1,{ "../../../../resource/glsl/4x/fs/03-framebuffer/drawCombined_mrt_fs4x.glsl" } },
-	{ a3shader_fragment,	1,{ "../../../../resource/glsl/4x/fs/03-framebuffer/drawAttribs_mrt_fs4x.glsl" } },
-	// 02
-	{ a3shader_fragment,	1,{ "../../../../resource/glsl/4x/fs/02-shading/e/drawPhong_fs4x.glsl" } },
-	{ a3shader_fragment,	1,{ "../../../../resource/glsl/4x/fs/02-shading/e/drawLambert_fs4x.glsl" } },
-	{ a3shader_fragment,	1,{ "../../../../resource/glsl/4x/fs/02-shading/e/drawDiffuse_fs4x.glsl" } },
-	{ a3shader_fragment,	1,{ "../../../../resource/glsl/4x/fs/02-shading/e/drawTexture_fs4x.glsl" } },
-	// base
-	{ a3shader_fragment,	1,{ "../../../../resource/glsl/4x/fs/e/drawColorUnif_fs4x.glsl" } },
-	{ a3shader_fragment,	1,{ "../../../../resource/glsl/4x/fs/e/drawColorAttrib_fs4x.glsl" } },
+		// fs
+		// 03
+		{ a3shader_fragment,	1,{ "../../../../resource/glsl/4x/fs/03-framebuffer/drawEffects_mrt_fs4x.glsl" } },
+		{ a3shader_fragment,	1,{ "../../../../resource/glsl/4x/fs/03-framebuffer/drawCombined_mrt_fs4x.glsl" } },
+		{ a3shader_fragment,	1,{ "../../../../resource/glsl/4x/fs/03-framebuffer/drawAttribs_mrt_fs4x.glsl" } },
+		// 02
+		{ a3shader_fragment,	1,{ "../../../../resource/glsl/4x/fs/02-shading/e/drawPhong_fs4x.glsl" } },
+		{ a3shader_fragment,	1,{ "../../../../resource/glsl/4x/fs/02-shading/e/drawLambert_fs4x.glsl" } },
+		{ a3shader_fragment,	1,{ "../../../../resource/glsl/4x/fs/02-shading/e/drawDiffuse_fs4x.glsl" } },
+		{ a3shader_fragment,	1,{ "../../../../resource/glsl/4x/fs/02-shading/e/drawTexture_fs4x.glsl" } },
+		// base
+		{ a3shader_fragment,	1,{ "../../../../resource/glsl/4x/fs/e/drawColorUnif_fs4x.glsl" } },
+		{ a3shader_fragment,	1,{ "../../../../resource/glsl/4x/fs/e/drawColorAttrib_fs4x.glsl" } },
 	};
 
 	// load unique shaders: 
@@ -682,7 +682,7 @@ void a3demo_initScene(a3_DemoState *demoState)
 	a3real4Set(demoState->lightPos_world.v, 20.0f, 0.0f, 0.0f, 1.0f);
 
 	// init fmod
-//	fmod_init(demoState);
+	//	fmod_init(demoState);
 }
 
 
@@ -722,7 +722,7 @@ void a3demo_refresh(a3_DemoState *demoState)
 void a3demo_validateUnload(const a3_DemoState *demoState)
 {
 	// unload fmod data
-//	fmod_unload(demoState);
+	//	fmod_unload(demoState);
 	unsigned int handle;
 	const a3_Framebuffer *currentFBO = demoState->framebuffer,
 		*const endFBO = currentFBO + demoStateMaxCount_framebuffer;
@@ -898,11 +898,7 @@ void a3demo_update(a3_DemoState *demoState, double dt)
 		a3demo_updateCameraViewProjection(demoState->camera + i);
 
 	// update audio data
-<<<<<<< HEAD
-//  fmod_updateAudioData(demoState);
-=======
-	FMOD_Channel_GetSpectrum(demoState->channel, demoState->spectrum_data, 256, 0, FMOD_DSP_FFT_WINDOW_TRIANGLE);
->>>>>>> parent of 949cb98... Can now get both spectrum and wave data
+	//  fmod_updateAudioData(demoState);
 }
 
 void a3demo_render(const a3_DemoState *demoState)
@@ -1033,12 +1029,12 @@ void a3demo_render(const a3_DemoState *demoState)
 
 	// ****TO-DO
 	// Add some sort of if statement here to switch between the two shader programs
-	
+
 	if (demoState->programType == 0)
 		currentDemoProgram = demoState->prog_drawCombinedMRT;
 	else
 		currentDemoProgram = demoState->prog_drawEffectsMRT;
-	
+
 	// currentDemoProgram = demoState->prog_drawAttribsMRT;
 	a3shaderProgramActivate(currentDemoProgram->program);
 
@@ -1286,8 +1282,8 @@ void fmod_updateAudioData(a3_DemoState *demoState/*params*/)
 	// FMOD_Channel_GetSpectrum(demoState->channel, demoState->spectrum_data, 256, 0, FMOD_DSP_FFT_WINDOW_TRIANGLE);
 	// FMOD_DSP_GetParameterData(FMOD_DSP_FFT_SPECTRUMDATA, 1, (void **)&demoState->fft, 1024, demoState->spectrum_data, 256)
 	// Get Wave and Spectrum Data
-	FMOD_Channel_GetWaveData(demoState->channel, demoState->wave_data, 256, 0);
-	FMOD_Channel_GetSpectrum(demoState->channel, demoState->spectrum_data, 256, 0, FMOD_DSP_FFT_WINDOW_TRIANGLE);
+//	FMOD_Channel_GetWaveData(demoState->channel, demoState->wave_data, 256, 0);
+//	FMOD_Channel_GetSpectrum(demoState->channel, demoState->spectrum_data, 256, 0, FMOD_DSP_FFT_WINDOW_TRIANGLE);
 }
 
 
