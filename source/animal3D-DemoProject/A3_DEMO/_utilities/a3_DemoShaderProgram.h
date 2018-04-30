@@ -1,3 +1,5 @@
+// This file was modified by Vedant Chaudhari with permission from author
+
 /*
 	Copyright 2011-2018 Daniel S. Buckstein
 
@@ -71,7 +73,14 @@ extern "C"
 					// common fragment shader uniforms
 					uTex_dm,					// diffuse map/surface texture
 					uTex_sm,					// specular map/reflective color
-					uColor;						// uniform color
+					uColor,						// uniform color
+
+					// Uniforms used for music visualization - Vedant
+					uTime,
+					uSpectrumData,
+					uWaveData,
+					uResX,
+					uResY;
 			};
 		};
 	};

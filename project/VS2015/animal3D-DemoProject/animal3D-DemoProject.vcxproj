@@ -125,7 +125,7 @@
       <SubSystem>Windows</SubSystem>
       <GenerateDebugInformation>Debug</GenerateDebugInformation>
       <AdditionalLibraryDirectories>$(ANIMAL3D_SDK)lib\$(PlatformTarget)\$(PlatformToolset)\$(Configuration)\;$(ANIMAL3D_SDK)thirdparty\lib\$(PlatformTarget)\$(PlatformToolset)\$(Configuration)\;$(DEV_SDK_DIR)lib\$(PlatformTarget)\;C:\Program Files %28x86%29\FMOD SoundSystem\FMOD Programmers API Win64\api\lib;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
-      <AdditionalDependencies>fmodL64_vc.lib;fmod64_vc.lib;animal3D.lib;animal3D-A3DM.lib;opengl32.lib;glew32.lib;devil.lib;ilu.lib;ilut.lib;xinput1_3.lib;%(AdditionalDependencies);fmodex64_vc.lib</AdditionalDependencies>
+      <AdditionalDependencies>fmodex64p_vc.lib;fmodex64L_vc.lib;fmodex64_vc.lib;animal3D.lib;animal3D-A3DM.lib;opengl32.lib;glew32.lib;devil.lib;ilu.lib;ilut.lib;xinput1_3.lib;%(AdditionalDependencies);fmodex64_vc.lib</AdditionalDependencies>
     </Link>
     <PostBuildEvent>
       <Command>call "$(ANIMAL3D_SDK)utility\win\dev\animal3d_win_copy_build.bat" ".\lib\$(PlatformTarget)\$(PlatformToolset)\$(Configuration)\" ".\bin\$(PlatformTarget)\$(PlatformToolset)\$(Configuration)\animal3D-demos\" "$(TargetFileName)" "$(TargetFileName)" ".\bin\$(PlatformTarget)\$(PlatformToolset)\$(Configuration)\data\"</Command>

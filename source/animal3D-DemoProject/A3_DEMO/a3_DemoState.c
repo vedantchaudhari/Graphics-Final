@@ -347,6 +347,13 @@ void a3demo_loadShaders(a3_DemoState *demoState)
 		"uTex_dm",
 		"uTex_sm",
 		"uColor",
+
+		// Uniforms used for music visualization
+		"uTime",
+		"uSpectrumData",
+		"uWaveData",
+		"uResX",
+		"uResY",
 	};
 
 
@@ -572,7 +579,18 @@ void a3demo_loadShaders(a3_DemoState *demoState)
 			a3shaderUniformSendInt(a3unif_single, uLocation, 1, defaultTexUnits + 1);
 		if ((uLocation = currentDemoProg->uColor) >= 0)
 			a3shaderUniformSendFloat(a3unif_vec4, uLocation, 1, defaultColor);
+		if ((uLocation = currentDemoProg->uTime) >= 0)
+			a3shaderUniformSendDouble(a3unif_single, uLocation, 1, &demoState->timer->currentTick);
+		if ((uLocation = currentDemoProg->uSpectrumData) >= 0)
+			a3shaderUniformSendFloat(a3unif_single, uLocation, 1, 0);
+		if ((uLocation = currentDemoProg->uWaveData) >= 0)
+			a3shaderUniformSendFloat(a3unif_single, uLocation, 1, 0);
+		if ((uLocation = currentDemoProg->uResX) >= 0)
+			a3shaderUniformSendInt(a3unif_single, uLocation, 1, &demoState->windowWidth);
+		if ((uLocation = currentDemoProg->uResY) >= 0)
+			a3shaderUniformSendInt(a3unif_single, uLocation, 1, &demoState->windowHeight);
 	}
+
 
 	//done
 	a3shaderProgramDeactivate();
@@ -699,7 +717,9 @@ void a3demo_initScene(a3_DemoState *demoState)
 	a3real4Set(demoState->lightPos_world.v, 20.0f, 0.0f, 0.0f, 1.0f);
 
 	// init fmod
-	//	fmod_init(demoState);
+	fmod_init(demoState);
+
+	fmod_loadAudio(demoState);
 }
 
 
@@ -739,7 +759,7 @@ void a3demo_refresh(a3_DemoState *demoState)
 void a3demo_validateUnload(const a3_DemoState *demoState)
 {
 	// unload fmod data
-	//	fmod_unload(demoState);
+	fmod_unload(demoState);
 	unsigned int handle;
 	const a3_Framebuffer *currentFBO = demoState->framebuffer,
 		*const endFBO = currentFBO + demoStateMaxCount_framebuffer;
@@ -915,7 +935,7 @@ void a3demo_update(a3_DemoState *demoState, double dt)
 		a3demo_updateCameraViewProjection(demoState->camera + i);
 
 	// update audio data
-	//  fmod_updateAudioData(demoState);
+	fmod_updateAudioData(demoState);
 }
 
 void a3demo_render(const a3_DemoState *demoState)
@@ -1049,6 +1069,18 @@ void a3demo_render(const a3_DemoState *demoState)
 	currentDemoProgram = demoState->prog_drawMusicVisualizer;
 
 	a3shaderProgramActivate(currentDemoProgram->program);
+
+	//a3vec2 resolution;
+	//resolution.x = (int)demoState->windowWidth;
+	//resolution.y = (int)demoState->windowHeight;
+
+	// Send Uniforms we need here
+	a3shaderUniformSendDouble(a3unif_single, currentDemoProgram->uTime, 1, &demoState->timer->currentTick);
+	a3shaderUniformSendFloat(a3unif_single, currentDemoProgram->uSpectrumData, 256, demoState->spectrum_data);
+	a3shaderUniformSendFloat(a3unif_single, currentDemoProgram->uWaveData, 256, demoState->wave_data);
+//	a3shaderUniformSendFloat(a3unif_vec2, currentDemoProgram->uResolution, 1, (float)&demoState->windowWidth, &demoState->windowHeight);
+	a3shaderUniformSendInt(a3unif_single, currentDemoProgram->uResX, 1, &demoState->windowWidth);
+	a3shaderUniformSendInt(a3unif_single, currentDemoProgram->uResY, 1, &demoState->windowHeight);
 
 	// ground
 	currentDrawable = demoState->draw_groundPlane;
@@ -1274,16 +1306,24 @@ void fmod_init(a3_DemoState *demoState/*params*/)
 {
 	// Initialize FMOD audio - Vedant
 	FMOD_System_Create(&demoState->audio_system);
+
+	//FMOD_System_GetDriverCaps(demoState->audio_system, 0, demoState->caps, 0, 0, demoState->speakerMode);
+	//FMOD_System_SetSpeakerMode(demoState->audio_system, demoState->speakerMode);
+	
 	demoState->channel = 0;
 	FMOD_System_Init(demoState->audio_system, 32, FMOD_INIT_NORMAL, 0);
 }
 
 void fmod_loadAudio(a3_DemoState *demoState/*params*/)
 {
+	demoState->audio_path = "../../../../resource/audio/archer-theme-song.wav";
 
+	FMOD_System_CreateSound(demoState->audio_system, demoState->audio_path, FMOD_HARDWARE, 0, &demoState->sound);
+	FMOD_Sound_SetMode(demoState->sound, FMOD_LOOP_OFF);
+	FMOD_System_PlaySound(demoState->audio_system, FMOD_CHANNEL_FREE, demoState->sound, 1, &demoState->channel);
 }
 
-void fmod_unload(a3_DemoState *demoState/*params*/)
+void fmod_unload(const a3_DemoState *demoState/*params*/)
 {
 	// Unload FMOD - Vedant
 	FMOD_System_Close(demoState->audio_system);

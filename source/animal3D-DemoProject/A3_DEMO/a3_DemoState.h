@@ -139,8 +139,13 @@ struct a3_DemoState
 	FMOD_CHANNEL* channel;
 	FMOD_RESULT* result;
 
+	FMOD_CAPS* caps;
+	FMOD_SPEAKERMODE* speakerMode;
+
 	float spectrum_data[256];
 	float wave_data[512];
+
+	char* audio_path;
 
 	//---------------------------------------------------------------------
 	// object arrays: organized as anonymous unions for two reasons: 
@@ -284,7 +289,7 @@ void a3demo_setDefaultGraphicsState();
 void fmod_init(a3_DemoState *demoState/*params*/);
 void fmod_loadAudio(a3_DemoState *demoState/*params*/);
 void fmod_updateAudioData(a3_DemoState *demoState/*params*/);
-void fmod_unload(a3_DemoState *demoState/*params*/);
+void fmod_unload(const a3_DemoState *demoState/*params*/);
 
 // loading and unloading
 void a3demo_loadFramebuffers(a3_DemoState *demoState);
